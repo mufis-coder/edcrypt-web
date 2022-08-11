@@ -1,5 +1,5 @@
-const encrypt = () => {
-    return ('str');
+const encrypt = (strIn) => {
+    return (strIn);
 }
 
 const decrypt = () => {
