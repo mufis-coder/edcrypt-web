@@ -4,7 +4,7 @@ import { encrypt, decrypt } from "../utils/Edcrypt";
 const Content = () => {
     const [password, setPassword] = useState('');
     const [textIn, setTextIn] = useState('');
-    
+
     return ( 
         <div className="content">
             <form>
@@ -22,7 +22,7 @@ const Content = () => {
                     onChange={(e)=>setTextIn(e.target.value)}
                 ></textarea>
 
-                <p>result: {encrypt(textIn)}</p>
+                <p>result: {encrypt(textIn, password)}</p>
             </form>
         </div>
      );
