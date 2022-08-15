@@ -1,13 +1,13 @@
 const encrypt = (texIn, password) => {
     var lenPass= password.length, lenTextIn = texIn.length;
-    var iPass = 0, resText = "", numAdd = 0;
+    var iPass = 0, resText = "";
 
     for (var i=0; i<lenPass; i++) {
 		iPass = parseInt(iPass) + parseInt(password.charAt(i).charCodeAt(0));
 	}
 
     var lenTextLoop = lenTextIn;
-    for(var i=0; i<lenTextIn; i++) {
+    for(i=0; i<lenTextIn; i++) {
         if (texIn.charAt(i) === ' '|| texIn.charAt(i) === '\0' || texIn.charAt(i).charCodeAt(0)>123 ||
                 (texIn.charAt(i).charCodeAt(0)<97 && texIn.charAt(i).charCodeAt(0)<65) || 
                 (texIn.charAt(i).charCodeAt(0)<97 && texIn.charAt(i).charCodeAt(0)>91)) {
@@ -17,8 +17,8 @@ const encrypt = (texIn, password) => {
             var tempChar= (tempNum + texIn.charAt(i).charCodeAt(0))%26 + 65;
             resText = resText.concat(String.fromCharCode(tempChar));
         } else{
-            var tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
-            var tempChar= (tempNum + texIn.charAt(i).charCodeAt(0))%26 + 97;
+            tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
+            tempChar= (tempNum + texIn.charAt(i).charCodeAt(0))%26 + 97;
             resText = resText.concat(String.fromCharCode(tempChar));
         }
         
@@ -28,7 +28,7 @@ const encrypt = (texIn, password) => {
     return (resText);
 }
 
-const decrypt = () => {
+const decrypt = (texIn, password) => {
     return ('str');
 }
 
