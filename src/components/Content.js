@@ -18,13 +18,17 @@ const Content = () => {
     return ( 
         <div className="content">
             <form>
-                <label>encrypt</label>
-                <input type="radio" id="encrypt" value="encrypt" 
-                    name="type-algo" checked={isEncrypt} onChange={handleTypeAlgo}/>
+                <label className="control-label">
+                    encrypt
+                    <input type="radio" id="encrypt" value="encrypt" 
+                        name="type-algo" checked={isEncrypt} onChange={handleTypeAlgo}/>
+                </label>
                 
-                <label>decrypt</label>
-                <input type="radio" id="decrypt" value="decrypt" 
-                    name="type-algo" onChange={handleTypeAlgo}/>
+                <label className="control-label">
+                    decrypt
+                    <input type="radio" id="decrypt" value="decrypt" 
+                        name="type-algo" onChange={handleTypeAlgo}/>
+                </label>
 
                 <label>Input password:</label>
                 <textarea
@@ -42,7 +46,11 @@ const Content = () => {
                     onChange={(e)=>setTextIn(e.target.value)}
                 ></textarea>
                 
-                <p>result: {isEncrypt? encrypt(textIn, password): decrypt(textIn, password)}</p>
+                <label>Result:
+                    <p>
+                        {isEncrypt? encrypt(textIn, password): decrypt(textIn, password)}
+                    </p>
+                </label>
             </form>
         </div>
      );
