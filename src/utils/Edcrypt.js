@@ -43,9 +43,9 @@ const decrypt = (texIn, password) => {
                 (texIn.charAt(i).charCodeAt(0)<97 && texIn.charAt(i).charCodeAt(0)>91)) {
 			resText = resText.concat(texIn.charAt(i));
 		} else if(texIn.charAt(i).charCodeAt(0)>=65 && texIn.charAt(i).charCodeAt(0)<=90){
-            var charAt = texIn.charAt(i).charCodeAt(0) - 65;
-            var tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
-            var tempChar= 0 + charAt - tempNum;
+            let charAt = texIn.charAt(i).charCodeAt(0) - 65;
+            let tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
+            let tempChar= 0 + charAt - tempNum;
             while(true){
                 if(tempChar<=90 && tempChar>=65) {
 					break;
@@ -56,9 +56,9 @@ const decrypt = (texIn, password) => {
             }
             resText = resText.concat(String.fromCharCode(tempChar));
         } else{
-            var charAt = texIn.charAt(i).charCodeAt(0) - 97;
-            var tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
-            var tempChar= 0 + charAt - tempNum;
+            let charAt = texIn.charAt(i).charCodeAt(0) - 97;
+            let tempNum = ((((iPass%(i+1)) + (lenTextLoop+1))*lenPass));
+            let tempChar= 0 + charAt - tempNum;
             while(true){
                 if(tempChar<=122 && tempChar>=97) {
 					break;
