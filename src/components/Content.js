@@ -28,6 +28,7 @@ const Content = () => {
 
                 <label>Input password:</label>
                 <textarea
+                    className="password-area"
                     required
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
@@ -35,6 +36,7 @@ const Content = () => {
 
                 <label>Input text:</label>
                 <textarea
+                    className="text-input-area"
                     required
                     value={textIn}
                     onChange={(e)=>setTextIn(e.target.value)}

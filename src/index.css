@@ -1,11 +1,14 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
+}
+
+h1 {
+  text-align: center;
 }
 
 .content {
-  max-width: 400px;
+  max-width: 480px;
   margin: 0 auto;
   text-align: center;
 }
@@ -15,11 +18,21 @@
   display: block;
 }
 
-.content input, .create textarea, .create select {
+.content textarea {
   width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
+  padding: 6px 8px;
   box-sizing: border-box;
-  display: block;
+  border: 1px solid #E6D2AA;
+  border-radius: 2px;
+  background-color: #F1EFDC;
+  font-size: 16px;
+  resize: none;
+}
+
+.content textarea.password-area{
+  height: 32px;
+}
+
+.content textarea.text-input-area{
+  height: 150px;
 }
