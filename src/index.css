@@ -23,6 +23,7 @@ h1 {
 .content label {
   text-align: left;
   display: block;
+  padding-left: 10%;
 }
 
 .content textarea {
