@@ -26,7 +26,7 @@ h1 {
 }
 
 .content textarea {
-  width: 100%;
+  width: 80%;
   padding: 6px 8px;
   box-sizing: border-box;
   border: 1px solid #E6D2AA;
@@ -34,6 +34,9 @@ h1 {
   background-color: #F1EFDC;
   font-size: 16px;
   resize: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content textarea.password-area{
@@ -45,11 +48,17 @@ h1 {
 }
 
 .content p {
-  width: 100%;
+  width: 80%;
+  min-height: 32px;
   height: auto;
+  max-height: 150;
   padding: 6px 8px;
   box-sizing: border-box;
   border: 1px solid #F1EFDC;
   background-color: #E6D2AA;
   font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }

@@ -46,11 +46,10 @@ const Content = () => {
                     onChange={(e)=>setTextIn(e.target.value)}
                 ></textarea>
                 
-                <label>Result:
-                    <p>
-                        {isEncrypt? encrypt(textIn, password): decrypt(textIn, password)}
-                    </p>
-                </label>
+                <label>Result:</label>
+                <p>
+                    {isEncrypt? encrypt(textIn, password): decrypt(textIn, password)}
+                </p>
             </form>
         </div>
      );
