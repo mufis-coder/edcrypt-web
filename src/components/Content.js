@@ -1,14 +1,29 @@
 import {useState, useEffect} from 'react';
+import copy from "copy-to-clipboard";
 import { encrypt, decrypt } from "../utils/Edcrypt";
 
 const Content = () => {
     const [password, setPassword] = useState('');
     const [textIn, setTextIn] = useState('');
+    const [resText, setResText] = useState('');
+    const [textClipButton, setTextClipButton] = useState('Copy to clipboard');
     const [isEncrypt, setIsEncrypt] = useState(true);
+
+    useEffect(() => {
+        setTextClipButton('Copy to clipboard');
+    }, [password, textIn, isEncrypt]);
 
     useEffect(() => {
         setTextIn("");
     }, [isEncrypt]);
+
+    useEffect(() => {
+        if(isEncrypt){
+            setResText(encrypt(textIn, password));
+        }else{
+            setResText(decrypt(textIn, password));
+        }
+    }, [textIn]);
 
     const handleTypeAlgo = (e) => {
         const {value} = e.target;
@@ -17,6 +32,11 @@ const Content = () => {
         }else{
             setIsEncrypt(false);
         }
+    }
+
+    const copyToClipboard  = (e) => {
+        copy(resText);
+        setTextClipButton('Copied!');
     }
 
     return ( 
@@ -85,8 +105,18 @@ const Content = () => {
                         <div className="col-md-12 form-group">
                             <label>Result:</label>
                             <p id="result-paragraph">
-                                {isEncrypt? encrypt(textIn, password): decrypt(textIn, password)}
+                                {resText}
                             </p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-12 form-group">
+                            <button
+                                type="button"
+                                class="btn btn-outline-dark btn-sm"
+                                onClick={copyToClipboard}>
+                                {textClipButton}
+                            </button>
                         </div>
                     </div>
                 </form>
