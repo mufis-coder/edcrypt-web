@@ -93,7 +93,9 @@ const Content = () => {
                     Web application to encrypt and decrypt your messages. 
                     If you have any questions about the algorithm used. Please.
                 </p>
-                <p><a href="https://www.linkedin.com/in/fikris73/" target="_blank">Contact me</a></p>
+                <p><a href="https://www.linkedin.com/in/fikris73/" 
+                    target="_blank" 
+                    rel="noopener noreferrer">Contact me</a></p>
             </div>
         </div>
         </div>
