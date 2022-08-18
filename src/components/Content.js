@@ -1,10 +1,14 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { encrypt, decrypt } from "../utils/Edcrypt";
 
 const Content = () => {
     const [password, setPassword] = useState('');
     const [textIn, setTextIn] = useState('');
     const [isEncrypt, setIsEncrypt] = useState(true);
+
+    useEffect(() => {
+        setTextIn("");
+    }, [isEncrypt]);
 
     const handleTypeAlgo = (e) => {
         const {value} = e.target;
