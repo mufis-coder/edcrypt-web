@@ -8,11 +8,7 @@ const Content = () => {
     const [resText, setResText] = useState('');
     const [textClipButton, setTextClipButton] = useState('Copy to clipboard');
     const [isEncrypt, setIsEncrypt] = useState(true);
-
-    useEffect(() => {
-        setTextClipButton('Copy to clipboard');
-    }, [password, textIn, isEncrypt]);
-
+    
     useEffect(() => {
         setTextIn("");
     }, [isEncrypt]);
@@ -23,7 +19,8 @@ const Content = () => {
         }else{
             setResText(decrypt(textIn, password));
         }
-    }, [textIn]);
+        setTextClipButton('Copy to clipboard');
+    }, [textIn, password, isEncrypt]); 
 
     const handleTypeAlgo = (e) => {
         const {value} = e.target;
